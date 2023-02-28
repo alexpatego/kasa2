@@ -1,0 +1,79 @@
+@use "../Utils/variables"as *;
+@use "../Utils/mixins";
+
+/* collapse */
+
+.collapse{
+    @media #{$mq-small}{
+      margin: 1rem 2rem;
+    }
+    &__div{
+      padding: 0 10px;
+      height: 3rem;
+      color: $white;
+      @include mixins.flexbox;
+      @include mixins.justify-content(space-between);
+      place-items: center;
+      border-radius: 0.5rem;
+      background-color: $orange;
+      &__arrow{
+        height: 1rem;
+        width: 1.5rem;
+        @media #{$mq-small}{
+        height: 0.9rem;
+        width: 1.2rem;
+        }
+      }
+      &__title{
+        font-weight: 500;
+        font-size: 1.2rem;
+        @media #{$mq-small}{
+          font-size: 1.1rem;
+        }
+      }
+      &__description{
+      margin: 0;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      padding: 1.5rem;
+      color: $orange;
+      background-color: $grey;
+      @media #{$mq-small}{
+        font-size: 1rem;
+      }
+      }
+    }
+    &__comp{
+        transition: opacity 0.3s ease-in-out; 
+      }
+  }
+
+/* Collapse Product */
+
+.product__collapse {
+    @include mixins.grid-columns;
+    margin: 2rem 6rem 2rem 4rem;
+    gap: 2rem;  
+    @media #{$mq-small}{
+      @include mixins.flexbox;
+      @include mixins.flex-direction(column);
+      margin: 2rem 0;
+      gap: 0;
+    }
+  }
+
+/* Collapse About */
+
+.about__infos {
+    .collapse{
+       margin: 1rem 6rem;
+       @media #{$mq-medium}{
+            margin: 1rem 4rem;
+        } 
+       @media #{$mq-small}{
+            margin: 1rem 2rem;
+        }
+    }
+    
+}
+  

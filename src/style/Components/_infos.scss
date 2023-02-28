@@ -1,0 +1,40 @@
+@use "../Utils/variables"as *;
+@use "../Utils/mixins";
+
+/* infos */
+
+.product__infos {
+    color: $orange;
+    @include mixins.flexbox;
+    @include mixins.flex-direction(column);
+    @include mixins.justify-content(space-between);
+    margin: 0 2rem;
+    @media #{$miq-small}{
+        flex-direction: row;
+        @include mixins.align-items(flex-end);
+        margin: 0 4rem;
+    }
+    &__container{
+        @include mixins.flex-direction(column);
+        & h1{
+            margin: 1rem 0;
+            font-size: 3rem;
+            font-weight: 500;
+            @media #{$mq-small}{
+                font-size: 2rem;
+            }
+        }
+        & h3{
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            @media #{$mq-small}{
+                font-size: 1rem; 
+            } 
+        }
+    }
+    &__title{
+        @include mixins.flex-direction(column);
+    }
+
+}

@@ -1,0 +1,29 @@
+@use "../Utils/variables" as *;
+@use "../Utils/mixins";
+
+/* About page */
+
+.about{
+    margin: 0 4rem;
+    min-height: 71vh;
+    @media #{$mq-small}{
+        margin: 0 2rem;    
+    }
+    &__img{
+        width: 100%;
+        @include mixins.object-fit-center;
+        @include mixins.darkening;
+        max-height: 15rem;
+        border-radius: 2rem;
+    }
+    &__infos{
+        @include mixins.flexbox;
+        @include mixins.flex-direction(column);
+        @include mixins.justify-content(center);
+        margin: 1rem 0;
+        @media #{$mq-small}{
+          margin: 1rem -2rem;    
+      }
+    }
+}
+

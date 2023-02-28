@@ -17,7 +17,7 @@ const Navbar = () => {
           className={`navbar__links__a ${
             location.pathname === "/kasa2/" ? "active" : ""
           }`}
-          to="/"
+          to="/kasa2/"
           onClick={() => handleReload("/kasa2/")}
         >
           Accueil

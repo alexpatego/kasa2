@@ -27,7 +27,7 @@
         &__img{
             min-height: 18rem;
             border-radius: 1rem;
-            width: 360px;
+            width: 375px;
             @include mixins.darkening;
             @media #{$mq-card}{
                 width: 100%;

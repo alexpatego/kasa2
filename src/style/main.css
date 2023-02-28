@@ -617,6 +617,7 @@ a {
 /* About page */
 .about {
   margin: 0 4rem;
+  min-height: 71vh;
 }
 @media (max-width: 768px) {
   .about {
@@ -701,7 +702,7 @@ a {
 .HomeContainer__cards__img {
   min-height: 18rem;
   border-radius: 1rem;
-  width: 360px;
+  width: 375px;
   filter: brightness(75%);
 }
 @media (max-width: 964px) {

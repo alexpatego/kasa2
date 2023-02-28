@@ -10,19 +10,28 @@ import Error from "../../components/Error/Error";
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const foundProduct = logements.find((p) => p.id === id);
     setProduct(foundProduct);
-    if (product) {
-      document.title = foundProduct.title || "Kasa - Appartement"; // on récupère le titre de l'appartement pour l'afficher sur la fenêtre
-    }
+    setLoading(false);
   }, [id]);
 
+  useEffect(() => {
+    if (!loading && product) {
+      document.title = product.title || "Kasa - Appartement"; // on récupère le titre de l'appartement pour l'afficher sur la fenêtre
+    }
+  }, [loading, product]);
+
+  // Conditions pour affichage des pages et éviter les faux ids
+
+  if (loading) return null; // utilisation d'un loading pour éviter de retourner undefined
   if (!product) {
-    return null;
+    return <Error />;
   }
+  // renvoi la page Error si logement est invalide
 
   const equipments = product.equipments.map((i, index) => (
     <li className="equipments__list" key={index}>
